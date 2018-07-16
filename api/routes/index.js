@@ -1,7 +1,8 @@
-const { meme } = require('../controllers');
+const { meme, stack } = require('../controllers');
 
 module.exports = (app) => {
-  app.route('/auth');
+  app.route('/stackoverflow')
+    .post(stack.searchQuestion);
   app.route('/meme')
     .post(meme.searchForMeme);
 };
